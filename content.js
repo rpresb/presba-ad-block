@@ -13,6 +13,10 @@ document.querySelector('body').addEventListener('DOMNodeInserted', (e) => {
         if (e.target.src.indexOf('https://multicanais.com/player.php') > -1) {
             return;
         }
+
+        if (e.target.src.indexOf('https://futemax.fm/') > -1) {
+            return;
+        }
     }
     e.target.remove();
 });
