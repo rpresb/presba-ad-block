@@ -17,8 +17,18 @@ document.querySelector('body').addEventListener('DOMNodeInserted', (e) => {
         if (e.target.src.indexOf('https://futemax.fm/') > -1) {
             return;
         }
+
+        if (e.target.src.indexOf('http://www.superflix.net/') > -1) {
+            return;
+        }
     }
-    e.target.remove();
+
+    switch (e.target.tagName) {
+        case 'IFRAME':
+        case 'SCRIPT':
+            e.target.remove();
+            break;
+    }
 });
 
 removeAd();
